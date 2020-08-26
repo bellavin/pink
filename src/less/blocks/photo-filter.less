@@ -1,0 +1,222 @@
+.photo-filter {
+  padding-top: 20px;
+  padding-bottom: 43px;
+  background-color: @lightgray;
+
+  &__fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+
+  &__list {
+    position: relative;
+    display: flex;
+    padding-bottom: 46px;
+    padding-left: 18px;
+    padding-right: 32px;
+    margin-top: 40px;
+    justify-content: space-between;
+  }
+
+  &__item {
+    flex-grow: 1;
+    display: flex;
+  }
+
+  &__item:first-child &__input-range {
+    z-index: 1;
+  }
+
+  &__item &__input-range:focus,
+  &__item &__input-range:active {
+    z-index: 2;
+  }
+
+  &__input-range {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    z-index: 0;
+    width: calc(100% - 40px);
+  }
+
+  &__label-range {
+    display: flex;
+    margin: auto;
+
+    svg {
+      margin: auto;
+      display: block;
+    }
+  }
+
+  &__label-file {
+    display: block;
+
+    img {
+      display: block;
+      margin: 0 auto;
+      height: 374px;
+      object-fit: cover;
+    }
+  }
+
+  &__btns {
+    position: relative;
+    margin-top: 28px;
+    padding-top: 40px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -20px;
+      right: -20px;
+      height: 1px;
+      background-color: fade(@dark-blue, 10%);
+    }
+  }
+
+  &__btn {
+    width: 100%;
+  }
+
+  &__btn ~ &__btn {
+    margin-top: 10px;
+  }
+
+  @media (min-width: @tablet-width) {
+    padding-top: 57px;
+    padding-bottom: 53px;
+
+    &__form {
+      display: flex;
+    }
+
+    &__left {
+      flex-basis: 280px;
+    }
+
+    &__right {
+      flex-grow: 1;
+      padding-left: 47px;
+      padding-right: 18px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__fieldset:last-child {
+      margin-top: auto;
+    }
+
+    &__list {
+      display: block;
+      margin-top: 0;
+      padding-right: 0;
+      padding-left: 0;
+      padding-bottom: 0;
+    }
+
+    &__item {
+      position: relative;
+      flex-direction: row-reverse;
+      align-items: center;
+      height: 40px;
+      padding-bottom: 15px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        right: -20px;
+        bottom: 0;
+        left: 0;
+        display: block;
+        height: 1px;
+        background-color: fade(@dark-blue, 30%);
+      }
+    }
+
+    &__item ~ &__item {
+      margin-top: 17px;
+    }
+
+
+    &__input-range {
+      position: relative;
+      margin-left: 30px;
+      left: auto;
+      width: 100%;
+    }
+
+    &__label-range {
+      flex-shrink: 0;
+
+      svg {
+        height: 24px;
+        width: 24px;
+        fill: @pink;
+      }
+    }
+
+    &__item--contrast &__label-range svg {
+      height: 16px;
+    }
+
+    &__label-file img {
+      width: 300px;
+      height: 400px;
+    }
+
+    &__btns::before {
+      display: none;
+    }
+
+    &__btn ~ &__btn {
+      margin-top: 24px;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-left: 80px;
+    padding-right: 40px;
+    padding-bottom: 57px;
+
+    &__right {
+      padding-left: 89px;
+    }
+
+    &__input-range {
+      margin-left: 45px;
+      margin-right: 30px;
+    }
+
+    &__item::before {
+      right: 0;
+    }
+
+    &__item:last-child::before {
+      display: none;
+    }
+
+    &__item &__label-range svg {
+      width: 47px;
+      height: 47px;
+    }
+
+    &__item--contrast &__label-range svg {
+      height: 32px;
+    }
+
+    &__btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 45px;
+    }
+
+    &__btn,
+    &__btn ~ &__btn {
+      margin: 0;
+    }
+  }
+}

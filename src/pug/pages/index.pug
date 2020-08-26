@@ -1,0 +1,16 @@
+extends ../base/html.pug
+
+block body
+  body
+    div(style="display: none;")
+      include ../../img/svg/sprite_auto.svg
+
+    header
+      //- include ../blocks/top-menu.pug
+
+    main
+      //- include ../blocks/plan.pug
+      include ../blocks/photo-filter.pug
+
+    footer
+    include ../base/scripts.pug

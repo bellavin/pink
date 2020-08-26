@@ -1,0 +1,26 @@
++b.SECTION.photo-filter.container
+  +e.FORM.form
+    +e.left
+      +e.FIELDSET.fieldset
+        +e.INPUT.input-file.input-file.visually-hidden(type="file" id="photo-filter-input-file")
+        +e.LABEL.label-file.label-file(for="photo-filter-input-file")
+          img(src="img/content/photo-road-mobile@1x.jpg")
+    +e.right
+      +e.FIELDSET.fieldset
+        +e.UL.list.list-reset
+          +e.LI.item
+            +e.INPUT.input-range.input-range(type="range" id="photo-filter-input-range-crop")
+            +e.LABEL.label-range.label-range(for="photo-filter-input-range-crop")
+              +svg("#icon-editor-crop", 47, 47)
+          +e.LI.item
+            +e.INPUT.input-range.input-range(type="range" id="photo-filter-input-range-fill")
+            +e.LABEL.label-range.label-range(for="photo-filter-input-range-fill")
+              +svg("#icon-editor-fill", 47, 47)
+          +e.LI.item--contrast
+            +e.INPUT.input-range.input-range(type="range" id="photo-filter-input-range-contrast")
+            +e.LABEL.label-range.label-range(for="photo-filter-input-range-contrast")
+              +svg("#icon-editor-contrast", 32, 32)
+      +e.FIELDSET.fieldset--bottom
+        +e.btns
+          +e.BUTTON.btn.btn.btn-reset(type="submit") Запостить
+          +e.BUTTON.btn.btn--gray.btn-reset(type="reset") Отмена

@@ -1,0 +1,61 @@
+.top-menu {
+
+  &__logo-link {
+    display: block;
+    border-bottom: 1px solid black;
+    background-color: @dark-blue;
+    color: white;
+
+    svg {
+      display: block;
+      fill: currentColor;
+    }
+
+    &:hover,
+    &:focus {
+      color: @pink;
+    }
+
+    &:active {
+      color: fade(white, 30%);
+    }
+  }
+
+
+  &__list {
+
+  }
+
+  &__item {}
+
+  &__link {
+    display: block;
+    padding: 20px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    background-color: @dark-blue;
+    border-top: 1px solid fade(white, 15%);
+    border-bottom: 1px solid black;
+
+    &:hover,
+    &:focus {
+      color: @pink;
+    }
+
+    &:active {
+      color: fade(@pink, 30%);
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    &__inner {
+      display: flex;
+    }
+
+    &__list {
+      display: flex;
+    }
+  }
+}

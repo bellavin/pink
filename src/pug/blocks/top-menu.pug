@@ -1,0 +1,21 @@
+mixin item(src, text)
+  +e.LI.item
+    +e.link(href= src) #{text}
+
+
+
++b.top-menu
+  +e.NAV.inner
+    +e.top
+      +e.logo-link(href="index.html")
+        //- +svg("#logo-pink-white-mobile")
+        //- +svg("#logo-pink-white-tablet")
+        +svg("#logo-pink-white-desktop")
+      +e.burger
+        +b.burger
+          +e.inner
+    +e.UL.list.list-reset
+      +item("index.html", "Главная")
+      +item("photo.html", "Фотографии")
+      +item("form.html", "Конкурс")
+      +item("https://htmlacademy.ru", "HTML Academy")

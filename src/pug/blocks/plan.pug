@@ -1,0 +1,44 @@
+mixin th-item(title, price)
+  +e.TH.th
+    +e.H3.title #{title}
+    +e.price #{price + "\u00A0" + "USD"}
+
++b.SECTION.plan
+  +e.inner.container
+    +e.INPUT.toggle-1(type="radio" name="plan-table-toggle" checked)
+    +e.INPUT.toggle-2(type="radio" name="plan-table-toggle")
+    +e.INPUT.toggle-3(type="radio" name="plan-table-toggle")
+    +e.slider
+      +e.TABLE.table
+        +e.TR.tr
+          +e.TH.left-th
+          +th-item("База", "1,99")
+          +th-item("Стандарт", "3,99")
+          +th-item("Анлим", "9,99")
+
+        +e.TR.tr
+          +e.TH.left-th Розовый фильтр
+          +e.TD.td(data-table-left-th="Розовый фильтр")
+            +svg("#icon-yes", 31, 21)
+          +e.TD.td(data-table-left-th="Розовый фильтр")
+            +svg("#icon-yes", 31, 21)
+          +e.TD.td(data-table-left-th="Розовый фильтр")
+            +svg("#icon-yes", 31, 21)
+
+        +e.TR.tr
+          +e.TH.left-th Смайлики
+          +e.TD.td(data-table-left-th="Смайлики")
+            +svg("#icon-no", 27, 27)
+          +e.TD.td(data-table-left-th="Смайлики")
+            +svg("#icon-yes", 31, 21)
+          +e.TD.td(data-table-left-th="Смайлики")
+            +svg("#icon-yes", 31, 21)
+
+        +e.TR.tr
+          +e.TH.left-th Комментарии
+          +e.TD.td(data-table-left-th="Комментарии")
+            +svg("#icon-no", 27, 27)
+          +e.TD.td(data-table-left-th="Комментарии")
+            +svg("#icon-no", 27, 27)
+          +e.TD.td(data-table-left-th="Комментарии")
+            +svg("#icon-yes", 31, 21)
